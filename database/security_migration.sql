@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS login_attempts (
+    ip_hash CHAR(64) CHARACTER SET ascii COLLATE ascii_bin PRIMARY KEY,
+    attempts TINYINT UNSIGNED NOT NULL DEFAULT 0,
+    window_started_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    locked_until DATETIME NULL,
+    updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_login_attempts_updated (updated_at)
+) ENGINE=InnoDB;

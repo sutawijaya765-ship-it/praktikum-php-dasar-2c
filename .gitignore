@@ -1,0 +1,11 @@
+﻿config/config.php
+config/database.php
+database/mini_digital_library.sql
+database/reset_admin_password.php
+database/reset_admin_password.ps1
+database/mdl-admin-backup-*
+uploads/*
+!uploads/.htaccess
+.env
+.env.*
+*.log
